@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nader Ammar | Embedded Systems &amp; AI Portfolio</title>
+    <meta name="description" content="Nader Ammar - Engineering student at EPI exploring embedded systems, artificial intelligence, and robotics." />
+    <meta property="og:title" content="Nader Ammar | Embedded Systems &amp; AI Portfolio" />
+    <meta property="og:description" content="Nader Ammar - Engineering student at EPI exploring embedded systems, artificial intelligence, and robotics." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body>
+    <!-- Top Darkmoon Navigation Bar -->
+    <header class="site-header" id="site-header">
+      <div class="container nav-container">
+        <a href="#hero" class="brand-wrapper" aria-label="Nader Ammar Home">
+          <div class="brand-logo-icon">
+            <div class="brand-moon"></div>
+          </div>
+          <span class="brand-name">NADER AMMAR</span>
+          <span class="brand-tag">EPI &bull; ENG</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav aria-label="Desktop Navigation">
+          <ul class="nav-links-desktop">
+            <li><a href="#hero" class="nav-link active">Architecture</a></li>
+            <li><a href="#radar" class="nav-link">Tech Radar</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#interests" class="nav-link">Interests</a></li>
+            <li><a href="#terminal" class="nav-link">Terminal</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="nav-actions">
+          <a href="mailto:naderammar777@gmail.com" class="btn-hud-primary">
+            <span>Contact Nader</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <a href="https://github.com/naderammar" target="_blank" rel="noopener noreferrer" class="btn-github-icon" aria-label="Nader Ammar GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+          </a>
+          <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <nav class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <ul>
+          <li><a href="#hero" class="mobile-nav-link">Architecture (3D)</a></li>
+          <li><a href="#radar" class="mobile-nav-link">Tech Radar</a></li>
+          <li><a href="#about" class="mobile-nav-link">About Nader</a></li>
+          <li><a href="#interests" class="mobile-nav-link">Technical Interests</a></li>
+          <li><a href="#terminal" class="mobile-nav-link">Terminal &amp; Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- 1. HERO: 3D SPACE CANVAS & HUD ORBIT STAGE (Video 00:00 - 00:03) -->
+      <section id="hero" class="hero-stage">
+        <!-- Interactive 3D Cosmic Canvas (Earth Horizon + Constellation Nodes) -->
+        <canvas id="space-canvas"></canvas>
+
+        <!-- Floating HUD Overlays -->
+        <div class="hero-hud-overlay">
+          <div class="container hud-layout-grid">
+            <!-- Left HUD Sidebar -->
+            <aside class="hud-sidebar">
+              <!-- User Identity Card -->
+              <div class="hud-user-card">
+                <div class="user-identity">
+                  <div class="user-avatar-hex">NA</div>
+                  <div class="user-names">
+                    <h3>Nader Ammar</h3>
+                    <span>Engineer @ EPI</span>
+                  </div>
+                </div>
+                <a href="#radar" class="btn-explore-orbit">
+                  <span>Radar</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Subsystems Selector Menu -->
+              <div class="hud-subsystems-menu" role="tablist">
+                <button class="hud-menu-item active" data-subsystem="0" role="tab" aria-selected="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                  </svg>
+                  <span>Core Microcontroller</span>
+                </button>
+                <button class="hud-menu-item" data-subsystem="1" role="tab" aria-selected="false">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83" />
+                  </svg>
+                  <span>Neural Edge Engine</span>
+                </button>
+                <button class="hud-menu-item" data-subsystem="2" role="tab" aria-selected="false">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="10" rx="2" />
+                    <circle cx="12" cy="5" r="2" />
+                  </svg>
+                  <span>Robotics &amp; Kinematics</span>
+                </button>
+                <button class="hud-menu-item" data-subsystem="3" role="tab" aria-selected="false">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                    <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                  </svg>
+                  <span>Telemetry &amp; Sensor Bus</span>
+                </button>
+              </div>
+
+              <!-- Interactive Step-by-Step Inspector (Directly from Video 00:01 - 00:03) -->
+              <div class="hud-inspector-card">
+                <div class="inspector-header">
+                  <span class="inspector-step-pill" id="inspector-step">Step 1 / 4</span>
+                  <div class="inspector-status" title="Telemetry Feed Live"></div>
+                </div>
+                <h4 class="inspector-title" id="inspector-title">Reachable from Hardware Bus</h4>
+                <p class="inspector-desc" id="inspector-desc">
+                  Central RTOS scheduler orchestrating sensors, real-time interrupts, and edge computation pipelines.
+                </p>
+                <div class="inspector-actions">
+                  <a href="#radar" class="btn-tech-details">[ TECHNICAL DETAILS ]</a>
+                  <button type="button" class="btn-inspector-next" id="btn-inspector-next">
+                    <span>NEXT</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Center Bottom Hero Headline (Video 00:03) -->
+            <div class="hero-center-banner">
+              <div class="banner-badge">
+                <span>ORBITAL TELEMETRY // EPI ENGINEERING</span>
+              </div>
+              <h1 class="banner-title">
+                Walk your systems in <span>3D</span>, or explore the orbital telemetry.
+              </h1>
+              <p class="banner-subtitle">
+                I am <strong>Nader Ammar</strong>, an engineering student at EPI exploring how hardware and software work together to create intelligent systems in embedded engineering, artificial intelligence, and robotics.
+              </p>
+              <div class="banner-cta-row">
+                <a href="#about" class="btn-orbital-glow">
+                  <span>Explore Engineering Profile</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+                <a href="#terminal" class="btn-orbital-ghost">
+                  <span>Open Terminal Console</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="4 17 10 11 4 5" />
+                    <line x1="12" y1="19" x2="20" y2="19" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. METRICS TICKER STRIP (Video 00:04) -->
+      <section class="metrics-strip">
+        <div class="container">
+          <div class="metrics-strip-grid">
+            <div class="metric-item">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <rect x="9" y="9" width="6" height="6" />
+                </svg>
+              </div>
+              <div class="metric-data">
+                <h4>50+</h4>
+                <p>Embedded Modules</p>
+              </div>
+            </div>
+
+            <div class="metric-item">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <div class="metric-data">
+                <h4>142</h4>
+                <p>Sensor Telemetry Bus</p>
+              </div>
+            </div>
+
+            <div class="metric-item">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 14 14" />
+                </svg>
+              </div>
+              <div class="metric-data">
+                <h4>LIVE</h4>
+                <p>RTOS Kernel State</p>
+              </div>
+            </div>
+
+            <div class="metric-item">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="metric-data">
+                <h4>EPI</h4>
+                <p>Academic Excellence</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ORBITAL TECH RADAR (Video 00:05 - 00:08) -->
+      <section id="radar" class="section-radar">
+        <div class="container">
+          <div class="section-head-center">
+            <span class="section-tag">System Constellation</span>
+            <h2 class="section-h2">Orbital Technology Radar</h2>
+            <p class="section-sub">
+              Core technologies, firmware stacks, and hardware interfaces orbiting the central MCU processor.
+            </p>
+          </div>
+
+          <div class="tech-radar-stage" id="tech-radar-stage">
+            <!-- Concentric Orbital Radar Rings -->
+            <div class="radar-ring radar-ring-1"></div>
+            <div class="radar-ring radar-ring-2"></div>
+            <div class="radar-ring radar-ring-3"></div>
+            <div class="radar-sweep-beam"></div>
+
+            <!-- Central Core Hub -->
+            <div class="radar-center-core" title="Central Processing Core">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <rect x="9" y="9" width="6" height="6" />
+              </svg>
+              <span>MCU CORE</span>
+            </div>
+
+            <!-- Orbiting Badges (Video 00:05 layout) -->
+            <!-- Inner Orbit (Radius ~110px) -->
+            <div class="radar-badge-node" style="top: 36%; left: 32%;" data-info="C / C++: Low-level embedded systems &amp; firmware development.">
+              <span class="node-dot"></span>
+              <span>C / C++</span>
+            </div>
+            <div class="radar-badge-node" style="top: 36%; right: 32%;" data-info="FreeRTOS: Real-time deterministic task scheduling and IPC.">
+              <span class="node-dot"></span>
+              <span>FreeRTOS</span>
+            </div>
+            <div class="radar-badge-node" style="bottom: 34%; left: 45%;" data-info="ARM Cortex: 32-bit microcontroller architecture and peripheral drivers.">
+              <span class="node-dot"></span>
+              <span>ARM Cortex</span>
+            </div>
+
+            <!-- Mid Orbit (Radius ~210px) -->
+            <div class="radar-badge-node" style="top: 20%; left: 42%;" data-info="STM32: Industry-standard microcontrollers for high-speed sensing.">
+              <span class="node-dot"></span>
+              <span>STM32</span>
+            </div>
+            <div class="radar-badge-node" style="top: 32%; left: 14%;" data-info="ESP32: Wi-Fi/Bluetooth IoT edge connectivity and telemetry.">
+              <span class="node-dot"></span>
+              <span>ESP32</span>
+            </div>
+            <div class="radar-badge-node" style="top: 32%; right: 14%;" data-info="TensorFlow Lite: Quantized edge neural network model inference.">
+              <span class="node-dot"></span>
+              <span>TF Lite Edge</span>
+            </div>
+            <div class="radar-badge-node" style="bottom: 24%; left: 24%;" data-info="ROS: Robot Operating System for kinematic control &amp; simulation.">
+              <span class="node-dot"></span>
+              <span>ROS</span>
+            </div>
+            <div class="radar-badge-node" style="bottom: 24%; right: 24%;" data-info="Python: Scientific data processing, model training, and automation.">
+              <span class="node-dot"></span>
+              <span>Python</span>
+            </div>
+
+            <!-- Outer Orbit (Radius ~310px) -->
+            <div class="radar-badge-node" style="top: 8%; left: 45%;" data-info="I2C / SPI / UART: High-speed serial peripheral buses.">
+              <span class="node-dot"></span>
+              <span>Hardware Bus</span>
+            </div>
+            <div class="radar-badge-node" style="top: 50%; left: 2%;" data-info="KiCad: PCB schematic design, layout routing, and prototyping.">
+              <span class="node-dot"></span>
+              <span>KiCad</span>
+            </div>
+            <div class="radar-badge-node" style="top: 50%; right: 2%;" data-info="Embedded Linux: Custom kernel modules, device trees, and board bring-up.">
+              <span class="node-dot"></span>
+              <span>Linux Kernel</span>
+            </div>
+            <div class="radar-badge-node" style="bottom: 8%; left: 42%;" data-info="Cybersecurity: Firmware integrity, root of trust, and hardware security.">
+              <span class="node-dot"></span>
+              <span>Hardware Security</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. ABOUT NADER AMMAR & EPI (Video 00:10 - 00:12 Command Center) -->
+      <section id="about" class="section-about">
+        <div class="container">
+          <div class="about-cyber-card">
+            <div class="section-head-center" style="margin-bottom: 30px;">
+              <span class="section-tag">Engineering Profile</span>
+              <h2 class="section-h2">About Nader Ammar</h2>
+              <p class="section-sub">
+                Engineering student at EPI exploring the convergence of hardware, AI, and autonomous robotics.
+              </p>
+            </div>
+
+            <!-- Personal Introduction Quote -->
+            <div class="about-quote-cyber">
+              <p>
+                &ldquo;I enjoy exploring how hardware and software work together to create intelligent systems, particularly in embedded systems, artificial intelligence, and robotics.&rdquo;
+              </p>
+            </div>
+
+            <!-- Hardware-Software Integration Matrix -->
+            <div class="about-specs-grid">
+              <div class="spec-box">
+                <span class="spec-label">Academic Institution</span>
+                <div class="spec-val">EPI School of Engineering</div>
+                <div class="spec-detail">Focusing on Embedded Electronics &amp; Intelligent Computing.</div>
+              </div>
+
+              <div class="spec-box">
+                <span class="spec-label">Engineering Paradigm</span>
+                <div class="spec-val">Hardware-Software Co-Design</div>
+                <div class="spec-detail">Deep synergy between silicon circuitry, firmware, and AI algorithms.</div>
+              </div>
+
+              <div class="spec-box">
+                <span class="spec-label">Primary Exploration</span>
+                <div class="spec-val">Embedded AI &amp; Robotics</div>
+                <div class="spec-detail">Edge neural accelerators, real-time feedback loops, and connected sensors.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. TECHNICAL INTERESTS (Video 00:13 - 00:15) -->
+      <section id="interests" class="section-interests">
+        <div class="container">
+          <div class="section-head-center">
+            <span class="section-tag">Technical Domains</span>
+            <h2 class="section-h2">Technical Interests</h2>
+            <p class="section-sub">
+              Core areas of active engineering study, prototyping, and technical curiosity.
+            </p>
+          </div>
+
+          <div class="interests-hud-grid">
+            <!-- 1. Embedded Systems -->
+            <div class="interest-card-cyber">
+              <div class="interest-head">
+                <div class="interest-icon-cyber">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                  </svg>
+                </div>
+                <h3 class="interest-title-cyber">Embedded Systems</h3>
+              </div>
+              <p class="interest-desc-cyber">
+                Microcontroller architectures, peripheral interfaces (GPIO, I2C, SPI, UART), firmware development, and hardware-level timing.
+              </p>
+              <div class="interest-tags-cyber">
+                <span class="tag-cyber">Microcontrollers</span>
+                <span class="tag-cyber">Peripherals</span>
+                <span class="tag-cyber">Firmware</span>
+              </div>
+            </div>
+
+            <!-- 2. Artificial Intelligence -->
+            <div class="interest-card-cyber">
+              <div class="interest-head">
+                <div class="interest-icon-cyber">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="5" r="3" />
+                    <circle cx="5" cy="19" r="3" />
+                    <circle cx="19" cy="19" r="3" />
+                    <line x1="12" y1="8" x2="5" y2="16" />
+                    <line x1="12" y1="8" x2="19" y2="16" />
+                  </svg>
+                </div>
+                <h3 class="interest-title-cyber">Artificial Intelligence</h3>
+              </div>
+              <p class="interest-desc-cyber">
+                Machine learning fundamentals, neural network concepts, sensor data interpretation, and model deployment on constrained hardware.
+              </p>
+              <div class="interest-tags-cyber">
+                <span class="tag-cyber">Machine Learning</span>
+                <span class="tag-cyber">Neural Models</span>
+                <span class="tag-cyber">Edge Inference</span>
+              </div>
+            </div>
+
+            <!-- 3. Robotics -->
+            <div class="interest-card-cyber">
+              <div class="interest-head">
+                <div class="interest-icon-cyber">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="10" rx="2" />
+                    <circle cx="12" cy="5" r="2" />
+                    <path d="M12 7v4" />
+                  </svg>
+                </div>
+                <h3 class="interest-title-cyber">Robotics</h3>
+              </div>
+              <p class="interest-desc-cyber">
+                Kinematics, actuator control, motor drivers, sensor feedback loops, and designing responsive physical robotic behaviors.
+              </p>
+              <div class="interest-tags-cyber">
+                <span class="tag-cyber">Kinematics</span>
+                <span class="tag-cyber">Actuators</span>
+                <span class="tag-cyber">Feedback Loops</span>
+              </div>
+            </div>
+
+            <!-- 4. Programming -->
+            <div class="interest-card-cyber">
+              <div class="interest-head">
+                <div class="interest-icon-cyber">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                  </svg>
+                </div>
+                <h3 class="interest-title-cyber">Programming</h3>
+              </div>
+              <p class="interest-desc-cyber">
+                Writing structured, efficient code with clear logic, data structures, algorithms, and systems engineering practices.
+              </p>
+              <div class="interest-tags-cyber">
+                <span class="tag-cyber">Low-Level Logic</span>
+                <span class="tag-cyber">Algorithms</span>
+                <span class="tag-cyber">Code Design</span>
+              </div>
+            </div>
+
+            <!-- 5. Cybersecurity -->
+            <div class="interest-card-cyber">
+              <div class="interest-head">
+                <div class="interest-icon-cyber">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <h3 class="interest-title-cyber">Cybersecurity</h3>
+              </div>
+              <p class="interest-desc-cyber">
+                Firmware safety, hardware roots of trust, secure communication protocols, and safeguarding connected embedded devices.
+              </p>
+              <div class="interest-tags-cyber">
+                <span class="tag-cyber">Hardware Security</span>
+                <span class="tag-cyber">Secure Boot</span>
+                <span class="tag-cyber">Data Protection</span>
+              </div>
+            </div>
+
+            <!-- 6. IoT -->
+            <div class="interest-card-cyber">
+              <div class="interest-head">
+                <div class="interest-icon-cyber">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                    <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                  </svg>
+                </div>
+                <h3 class="interest-title-cyber">IoT</h3>
+              </div>
+              <p class="interest-desc-cyber">
+                Connected sensor networks, communication protocols, edge telemetry streams, and cloud integration architectures.
+              </p>
+              <div class="interest-tags-cyber">
+                <span class="tag-cyber">Connected Nodes</span>
+                <span class="tag-cyber">Telemetry</span>
+                <span class="tag-cyber">Smart Protocols</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CYBER TERMINAL & CONTACT SECTION -->
+      <section id="terminal" class="section-contact">
+        <div class="container">
+          <div class="section-head-center">
+            <span class="section-tag">Direct Comms</span>
+            <h2 class="section-h2">Let's Connect</h2>
+            <p class="section-sub">
+              Reach out directly to Nader Ammar for embedded systems, AI, and robotics collaborations.
+            </p>
+          </div>
+
+          <div class="contact-layout-split">
+            <!-- Interactive Cyber Terminal -->
+            <div class="cyber-terminal">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="term-dot term-dot-red"></span>
+                  <span class="term-dot term-dot-yellow"></span>
+                  <span class="term-dot term-dot-green"></span>
+                </div>
+                <span class="terminal-title">nader@epi-sys: ~ (bash)</span>
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #10b981;">ONLINE</span>
+              </div>
+              <div class="terminal-body" id="terminal-body">
+                <div class="terminal-line">
+                  <span class="term-user">nader@epi</span>:<span class="term-dir">~</span>$ system-info --status
+                </div>
+                <div class="term-output">
+                  [OK] Nader Ammar | Engineering Student at EPI<br />
+                  [OK] Hardware &amp; Software Co-Design Matrix Loaded<br />
+                  [INFO] Type <span style="color: var(--accent-cyan); font-weight: bold;">help</span>, <span style="color: var(--accent-cyan); font-weight: bold;">about</span>, <span style="color: var(--accent-cyan); font-weight: bold;">skills</span>, or <span style="color: var(--accent-cyan); font-weight: bold;">email</span> to inspect.
+                </div>
+                <div class="term-prompt-row">
+                  <span class="term-user">nader@epi</span>:<span class="term-dir">~</span>$&nbsp;
+                  <input type="text" id="term-input" class="term-input" placeholder="type a command..." autocomplete="off" spellcheck="false" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Contact Panels -->
+            <div class="contact-direct-panel">
+              <!-- Email Card -->
+              <div class="direct-card">
+                <div class="direct-card-head">
+                  <div class="direct-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Direct Email</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Primary communication channel</span>
+                  </div>
+                </div>
+                <div class="direct-val" id="email-address">naderammar777@gmail.com</div>
+                <div class="direct-btn-row">
+                  <a href="mailto:naderammar777@gmail.com" class="btn-hud-primary" style="flex: 1; justify-content: center;">
+                    <span>Email Nader</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <line x1="22" y1="2" x2="11" y2="13" />
+                      <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                  </a>
+                  <button type="button" class="btn-orbital-ghost" id="btn-copy-email">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                    </svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- GitHub Profile Card -->
+              <div class="direct-card">
+                <div class="direct-card-head">
+                  <div class="direct-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>GitHub Repository</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Open-source schematics &amp; code</span>
+                  </div>
+                </div>
+                <div class="direct-val">github.com/naderammar</div>
+                <a href="https://github.com/naderammar" target="_blank" rel="noopener noreferrer" class="btn-orbital-ghost" style="width: 100%; justify-content: center;">
+                  <span>Visit GitHub Profile</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Darkmoon Style Cosmic Footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-title">NADER AMMAR // EPI ENGINEERING</div>
+          <div class="footer-copy">
+            &copy; 2026 Nader Ammar. Built with HTML, plain CSS &amp; TypeScript.
+          </div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#hero">Architecture</a></li>
+          <li><a href="#radar">Tech Radar</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#interests">Interests</a></li>
+          <li><a href="#terminal">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="cyber-toast" id="cyber-toast" role="status" aria-live="polite">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2.5">
+        <polyline points="20 6 9 17 4 12" />
+      </svg>
+      <span id="toast-text">Copied to clipboard</span>
+    </div>
+
+    <!-- TypeScript Controller -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

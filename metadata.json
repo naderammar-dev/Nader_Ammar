@@ -1,0 +1,6 @@
+{
+  "name": "Engineering Portfolio - Embedded Systems & AI",
+  "description": "Clean, modern, light-themed engineering portfolio built with HTML, plain CSS, and TypeScript.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
